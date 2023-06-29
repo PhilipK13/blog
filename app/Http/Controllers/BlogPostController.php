@@ -18,7 +18,6 @@ class BlogPostController extends Controller
     {
         return Inertia::render('BlogPosts/Index', [
             'blogPosts' => BlogPost::with('user:id,name')->latest()->get(),
-
         ]);
     }
 
@@ -61,11 +60,19 @@ class BlogPostController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Updates the blog post after verifying the user is authenticated to do so.
      */
-    public function update(Request $request, BlogPost $blogPost)
+    public function update(Request $request, BlogPost $blogPost): RedirectResponse
     {
-        //
+        $this->authorize('update', $blogPost);
+
+        $validated = $request->validate([
+            'message' => 'required|string|max:255',
+        ]);
+
+        $blogPost->update($validated);
+
+        return redirect(route('blogPosts.index'));
     }
 
     /**
