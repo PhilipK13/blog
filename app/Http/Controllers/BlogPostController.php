@@ -78,8 +78,12 @@ class BlogPostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(BlogPost $blogPost)
+    public function destroy(BlogPost $blogPost): RedirectResponse
     {
-        //
+        $this->authorize('delete', $blogPost);
+
+        $blogPost->delete();
+
+        return redirect(route('blogPosts.index'));
     }
 }
