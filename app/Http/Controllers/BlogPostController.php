@@ -17,7 +17,8 @@ class BlogPostController extends Controller
     public function index(): Response
     {
         return Inertia::render('BlogPosts/Index', [
-            //
+            'blogPosts' => BlogPost::with('user:id,name')->latest()->get(),
+
         ]);
     }
 
@@ -30,7 +31,7 @@ class BlogPostController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Stores a blog post after verifying the length is less than 255 chars
      */
     public function store(Request $request): RedirectResponse
     {
