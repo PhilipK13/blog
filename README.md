@@ -34,8 +34,10 @@ Once you have the above installed, you can follow the steps below to run the app
         laravelsail/php82-composer:latest \
         composer install --ignore-platform-reqs
     ```
-7. You'll want to create a .env file in the root directory. You can copy the .env.example file and rename it to .env
-
+7. You'll want to create a .env file in the root directory. You can run this command to do that.
+    ```bash
+    cp .env.example .env
+    ```
 8. Run the following command to startup the application:
     ```bash
     ./vendor/bin/sail up
@@ -48,33 +50,16 @@ Once you have the above installed, you can follow the steps below to run the app
     ```bash
     ./vendor/bin/sail npm install
     ```
-11. Replace the vite.config.js contents with the following code:
-    ```bash
-        import { defineConfig } from 'vite';
-        import laravel from 'laravel-vite-plugin';
-        import react from '@vitejs/plugin-react';
-
-        export default defineConfig({
-            plugins: [
-                react(),
-                laravel({
-                    input: ['resources/css/app.css', 'resources/js/app.js'],
-                    refresh: true,
-                }),
-            ],
-            server: {
-                hmr: {
-                    host: 'localhost',
-                },
-            }
-        });
-    ```
 12. Run the following command to start vite and allow hot reloading:
     ```bash
         ./vendor/bin/sail npm run dev
     ```
-    
+13. You're all set! You can now access the application at http://localhost
+14. You can also access the local mailpit instance at http://localhost:8025
 
+If there are any issues feel free to reach out to me.
+
+You can also reference Laravels extensive documentation [here](https://laravel.com/docs/10.x/sail)
 
 
 
