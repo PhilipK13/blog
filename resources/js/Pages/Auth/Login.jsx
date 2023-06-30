@@ -76,8 +76,18 @@ export default function Login({ status, canResetPassword }) {
                         <span className="ml-2 text-sm text-gray-600">Remember me</span>
                     </label>
                 </div>
+                <div className="block mt-4">
+                    <Link
+                        href={route('register')}
+                        className="text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    >
+                        Don't have an account? Register here.
+                    </Link>
+                </div>
+
 
                 <div className="flex items-center justify-end mt-4">
+
                     {canResetPassword && (
                         <Link
                             href={route('password.request')}
