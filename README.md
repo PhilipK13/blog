@@ -59,6 +59,12 @@ Once you have the above installed, you can follow the steps below to run the app
 13. You're all set! You can now access the application at http://localhost
 14. You can also access the local mailpit instance at http://localhost:8025
 
+# While Running
+
+Optional efficiency booster is to setup an alias for the sail command. You can follow this [link](https://laravel.com/docs/10.x/sail#configuring-a-shell-alias) to set it up.
+
+Another important piece of info is that any commands need to be prefixed with the sail command as that's how the instance is running.
+
 If there are any issues feel free to reach out to me.
 
 You can also reference Laravels extensive documentation [here](https://laravel.com/docs/10.x/sail)
