@@ -15,6 +15,8 @@ To run this application, you need to have the following installed on your machin
 - WSL2 (Windows Subsystem for Linux) - [Installation Guide](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 - Docker Desktop - [Installation Guide](https://docs.docker.com/docker-for-windows/install/)
 
+(This should work on any OS that supports WSL2 and Docker Desktop, but has only been tested on Windows 10)
+
 Once you have the above installed, you can follow the steps below to run the application:
 
 1. Clone the repository to your local machine
